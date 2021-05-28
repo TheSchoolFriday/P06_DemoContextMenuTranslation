@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvTranslatedText, tvTranslatedText2;
+    TextView tvTranslatedText, tvTranslatedText2, tvTranslatedText3;
 
     String viewSelected;
 
@@ -24,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
         tvTranslatedText = findViewById(R.id.textViewTranslatedText);
         tvTranslatedText2 = findViewById(R.id.textViewTranslatedText2);
+        tvTranslatedText3 = findViewById(R.id.textViewTranslatedText3);
 
         registerForContextMenu(tvTranslatedText);
         registerForContextMenu(tvTranslatedText2);
+        registerForContextMenu(tvTranslatedText3);
     }
 
     @Override
@@ -42,9 +44,12 @@ public class MainActivity extends AppCompatActivity {
         if (v == tvTranslatedText) {
             Log.v("Context", "Top View is Selected");
             viewSelected = "topTextView";
-        } else {
+        } else if (v == tvTranslatedText2){
             Log.v("Context", "Bottom View is Selected");
             viewSelected = "bottomTextView";
+        } else if (v == tvTranslatedText3) {
+            Log.v("Context", "Faci View is Selected");
+            viewSelected = "Faci Challenge";
         }
 
     }
@@ -103,6 +108,25 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 3:
                     tvTranslatedText2.setText("Selamat");
+                    Toast.makeText(this, "Malay is Chosen", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        } else if (viewSelected.equalsIgnoreCase("Faci Challenge")) {
+            switch (item.getItemId()) { // This is for the bottom Text View.
+                case 0:
+                    tvTranslatedText3.setText("Welcome");
+                    Toast.makeText(MainActivity.this, "English is Chosen", Toast.LENGTH_SHORT).show();
+                    break;
+                case 1:
+                    tvTranslatedText3.setText("(Welcome in Italian)");
+                    Toast.makeText(MainActivity.this, "Italian is Chosen", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+                    tvTranslatedText3.setText("(Welcome in French)");
+                    Toast.makeText(this, "French is Chosen", Toast.LENGTH_SHORT).show();
+                    break;
+                case 3:
+                    tvTranslatedText3.setText("(Welcome in Malay)");
                     Toast.makeText(this, "Malay is Chosen", Toast.LENGTH_SHORT).show();
                     break;
             }
