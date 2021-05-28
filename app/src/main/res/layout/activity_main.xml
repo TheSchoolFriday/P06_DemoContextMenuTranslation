@@ -3,11 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="20sp">
 
     <TextView
         android:id="@+id/textViewTranslatedText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello" />
+        android:text="Hello"
+        android:padding="20sp"/>
+
+    <TextView
+        android:id="@+id/textViewTranslatedText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bye"
+        android:padding="20sp"/>
 </LinearLayout>
